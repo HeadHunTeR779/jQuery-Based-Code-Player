@@ -11,8 +11,8 @@
     <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet"> <!-- for jquery-ui -->
 
     <style>
-      #containment-wrapper { width: 500px; height:500px; border:2px solid #ccc; padding: 10px;}
-      #draggable3 { width: 100px ; height: 100px;}
+      #containment-wrapper { width: 500px; height:500px; border:2px solid #ccc; padding: 10px; background-color: purple;}
+      #draggable3 { width: 100px ; height: 100px; background-color: yellow;}
     </style>
 
   </head>
@@ -27,7 +27,7 @@
 
     <script type="text/javascript">
 
-      $( "#draggable3" ).draggable({ containment: "#containment-wrapper", scroll: true, axis: "y" });
+      $( "#draggable3" ).draggable({ containment: "#containment-wrapper", scroll: true }).resizable();
 
     </script>
 
