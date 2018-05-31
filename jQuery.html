@@ -11,20 +11,23 @@
     <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet"> <!-- for jquery-ui -->
 
     <style>
-      #draggable { width: 150px; height: 150px; padding: 0.5em; background-color: #5afaf3;}
+      #containment-wrapper { width: 500px; height:500px; border:2px solid #ccc; padding: 10px;}
+      #draggable3 { width: 100px ; height: 100px;}
     </style>
 
   </head>
 
   <body>
 
-    <div id="draggable" class="ui-widget-content">
-      <p>Drag me around</p>
+    <div id="containment-wrapper">
+      <div id="draggable3" class="draggable ui-widget-content">
+        <p>I'm contained within the box</p>
+      </div>
     </div>
 
     <script type="text/javascript">
 
-      $( "#draggable" ).draggable();
+      $( "#draggable3" ).draggable({ containment: "#containment-wrapper", scroll: true, axis: "y" });
 
     </script>
 
