@@ -10,24 +10,36 @@
 
     <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet"> <!-- for jquery-ui -->
 
-    <style>
-      #containment-wrapper { width: 500px; height:500px; border:2px solid #ccc; padding: 10px; background-color: purple;}
-      #draggable3 { width: 100px ; height: 100px; background-color: yellow;}
+    <style type="text/css">
+      #draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
+      #droppable { width: 250px; height: 250px; padding: 0.5em; float: left; margin: 10px; }
     </style>
 
   </head>
 
   <body>
 
-    <div id="containment-wrapper">
-      <div id="draggable3" class="draggable ui-widget-content">
-        <p>I'm contained within the box</p>
-      </div>
+    <div id="draggable" class="ui-widget-content">
+      <p>Draggable Entity</p>
+    </div>
+
+    <div id="droppable" class="ui-widget-header">
+      <p> Drop stuff inside me</p>
     </div>
 
     <script type="text/javascript">
 
-      $( "#draggable3" ).draggable({ containment: "#containment-wrapper", scroll: true }).resizable();
+      $("#draggable").draggable();
+
+      $("#droppable").droppable({
+        drop: function(event, ui)
+              {
+                $(this)
+                        .addClass("ui-state-highlight")
+                        .find("p")
+                        .html("Dropped");
+              }
+      });
 
     </script>
 
