@@ -13,59 +13,7 @@
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">  <!-- Awesome font for Code Runner -->
     <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
 
-    <style type="text/css">
-
-      body
-      {
-        margin: 0;
-        padding: 0;
-      }
-
-      #CodeRunner
-      {
-        background-color: #CCCCCC;
-        height:40px;
-        padding:10px;
-        padding-bottom: 10px;
-      }
-
-      #title
-      {
-        font-family: 'Russo One', sans-serif;
-        font-size: 150%;
-        margin-right: 350px;
-      }
-
-      #buttons
-      {
-        font-size: 110%;
-      }
-
-      .active
-      {
-        font-family: 'Fugaz One', cursive;
-      }
-
-      textarea
-      {
-        resize: none;
-        font-size: 150%;
-      }
-
-      .panel
-      {
-        float: left;
-        border: 1px solid grey;
-        border-right: none;
-       }
-
-       .hidden
-       {
-         display: none;
-       }
-
-
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
 
   </head>
 
@@ -96,41 +44,7 @@
 
     </div>
 
-    <script type="text/javascript">
-
-    function UpdateOutput()
-    {
-      $('iframe').contents().find('html')
-      .html('<html><head><style type="text/css">' + $("#cssPanel").val() +"</style></head><body>" + $("#htmlPanel").val() + "</body></html>"  );
-    }
-
-      $("#html, #css, #javascript, #output").button();
-
-      $('#css, #javascript, #html, #output').click( function()
-                                    {
-                                      $(this).toggleClass('active');
-
-                                      var id = $(this).attr('id');  //it has no #
-
-                                      $( '#' + id + 'Panel').toggleClass('hidden');  // or simply use
-                                                                        //built in toggle() as $( '#' + id + 'Panel').toggle()
-
-                                      $(".panel").width( window.innerWidth /(4 - ( $('.hidden').length ) ) - 8);
-                                    });
-
-      $('.panel').height( window.innerHeight - $("#CodeRunner").height() - 25);
-
-      $(".panel").width( window.innerWidth/2 - 8);
-
-      UpdateOutput();
-
-      $("textarea").on('change keyup paste', function() {
-                                                          UpdateOutput();                                                               
-                                                          });
-
-
-
-    </script>
+    <script type="text/javascript" src="script.js"></script>
 
   </body>
 

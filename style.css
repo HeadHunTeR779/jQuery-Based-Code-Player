@@ -1,0 +1,48 @@
+body
+{
+  margin: 0;
+  padding: 0;
+}
+
+#CodeRunner
+{
+  background-color: #CCCCCC;
+  height:40px;
+  padding:10px;
+  padding-bottom: 10px;
+}
+
+#title
+{
+  font-family: 'Russo One', sans-serif;
+  font-size: 150%;
+  margin-right: 350px;
+}
+
+#buttons
+{
+  font-size: 110%;
+}
+
+.active
+{
+  font-family: 'Fugaz One', cursive;
+}
+
+textarea
+{
+  resize: none;
+  font-size: 150%;
+}
+
+.panel
+{
+  float: left;
+  border: 1px solid grey;
+  border-right: none;
+ }
+
+ .hidden
+ {
+   display: none;
+ }
