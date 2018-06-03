@@ -10,11 +10,34 @@
 
     <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet"> <!-- for jquery-ui -->
 
+    <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">  <!-- Awesome font for Code Runner -->
     <style type="text/css">
 
-      #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-      #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-      #sortable li span { position: absolute; margin-left: -1.3em; }
+      body
+      {
+        margin: 0;
+        padding: 0;
+      }
+
+      #CodeRunner
+      {
+        background-color: #CCCCCC;
+        height:40px;
+        padding:10px;
+        padding-bottom: 10px;
+      }
+
+      #title
+      {
+        font-family: 'Russo One', sans-serif;
+        font-size: 150%;
+        margin-right: 350px;
+      }
+
+      #buttons
+      {
+        font-size: 110%;
+      }
 
     </style>
 
@@ -22,17 +45,22 @@
 
   <body>
 
-    <ul id="sortable">
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Dad</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Mom</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Joy</li>
-      <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Happy</li>
-    </ul>
+    <div id="CodeRunner">
+      <span id="title">HeadHunTeR779's Code RunneR </span>
+
+          <!-- Insert Buttons for running all languages html css js -->
+      <span id='buttons'>
+        <button id="html">HTML</button>
+        <button id="css">CSS</button>
+        <button id="javascript">JAVASCRIPT</button>
+        <button id="output">OUTPUT</button>
+      </span>
+
+    </div>
 
     <script type="text/javascript">
 
-      $("#sortable").sortable();
-      $( "#sortable" ).disableSelection();
+      $("#html, #css, #javascript, #output").button();
 
     </script>
 
