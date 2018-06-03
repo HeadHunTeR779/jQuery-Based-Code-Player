@@ -11,6 +11,8 @@
     <link href="jquery-ui-1.12.1.custom/jquery-ui.css" rel="stylesheet"> <!-- for jquery-ui -->
 
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">  <!-- Awesome font for Code Runner -->
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+
     <style type="text/css">
 
       body
@@ -39,6 +41,11 @@
         font-size: 110%;
       }
 
+      .active
+      {
+        font-family: 'Fugaz One', cursive;
+      }
+
     </style>
 
   </head>
@@ -50,10 +57,10 @@
 
           <!-- Insert Buttons for running all languages html css js -->
       <span id='buttons'>
-        <button id="html">HTML</button>
+        <button id="html" class="active">HTML</button>             <!-- Initially HTML & OUTPUT IS ACTIVE -->
         <button id="css">CSS</button>
         <button id="javascript">JAVASCRIPT</button>
-        <button id="output">OUTPUT</button>
+        <button id="output" class="active">OUTPUT</button>         <!-- Initially HTML & OUTPUT IS ACTIVE -->
       </span>
 
     </div>
@@ -61,6 +68,14 @@
     <script type="text/javascript">
 
       $("#html, #css, #javascript, #output").button();
+
+      $('#css, #javascript, #html, #output').click( function()
+                                    {
+                                      if( $(this).hasClass('active') )
+                                        $(this).removeClass('active');
+                                      else
+                                        $(this).addClass('active');
+                                    });
 
     </script>
 
