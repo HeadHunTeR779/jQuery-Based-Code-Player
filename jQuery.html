@@ -48,10 +48,14 @@
 
       textarea
       {
-        width: 50%;
         resize: none;
         font-size: 150%;
       }
+
+      .panel
+      {
+        float: left;
+       }
 
     </style>
 
@@ -73,7 +77,10 @@
     </div>
 
     <div id="bodyContainer">
-      <textarea id="htmlPanel">Hello World</textarea>
+
+      <textarea id="htmlPanel" class="panel">Hello World</textarea>
+
+      <iframe id="outputPanel" class="panel"></iframe>
 
     </div>
 
@@ -86,7 +93,9 @@
                                       $(this).toggleClass('active');
                                     });
 
-      $("textarea").height( window.innerHeight - $("#CodeRunner").height() - 25);
+      $('textarea').height( window.innerHeight - $("#CodeRunner").height() - 25);
+
+      $(".panel").width( window.innerWidth /2 - 4);
 
     </script>
 
