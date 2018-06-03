@@ -46,6 +46,13 @@
         font-family: 'Fugaz One', cursive;
       }
 
+      textarea
+      {
+        width: 50%;
+        resize: none;
+        font-size: 150%;
+      }
+
     </style>
 
   </head>
@@ -65,17 +72,21 @@
 
     </div>
 
+    <div id="bodyContainer">
+      <textarea id="htmlPanel">Hello World</textarea>
+
+    </div>
+
     <script type="text/javascript">
 
       $("#html, #css, #javascript, #output").button();
 
       $('#css, #javascript, #html, #output').click( function()
                                     {
-                                      if( $(this).hasClass('active') )
-                                        $(this).removeClass('active');
-                                      else
-                                        $(this).addClass('active');
+                                      $(this).toggleClass('active');
                                     });
+
+      $("textarea").height( window.innerHeight - $("#CodeRunner").height() - 25);
 
     </script>
 
