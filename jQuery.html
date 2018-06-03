@@ -59,6 +59,11 @@
         border-right: none;
        }
 
+       .hidden
+       {
+         display: none;
+       }
+
 
     </style>
 
@@ -81,7 +86,11 @@
 
     <div id="bodyContainer">
 
-      <textarea id="htmlPanel" class="panel">Hello</textarea>
+      <textarea id="htmlPanel" class="panel">HTML</textarea>
+
+      <textarea id="cssPanel" class="panel hidden">CSS</textarea>
+
+      <textarea id="javascriptPanel" class="panel hidden">VanillaJS</textarea>
 
       <iframe id="outputPanel" class="panel"></iframe>
 
@@ -89,20 +98,37 @@
 
     <script type="text/javascript">
 
+    function UpdateOutput()
+    {
+      $('iframe').contents().find('html')
+      .html('<html><head><style type="text/css">' + $("#cssPanel").val() +"</style></head><body>" + $("#htmlPanel").val() + "</body></html>"  );
+    }
+
       $("#html, #css, #javascript, #output").button();
 
       $('#css, #javascript, #html, #output').click( function()
                                     {
                                       $(this).toggleClass('active');
+
+                                      var id = $(this).attr('id');  //it has no #
+
+                                      $( '#' + id + 'Panel').toggleClass('hidden');  // or simply use
+                                                                        //built in toggle() as $( '#' + id + 'Panel').toggle()
+
+                                      $(".panel").width( window.innerWidth /(4 - ( $('.hidden').length ) ) - 8);
                                     });
 
       $('.panel').height( window.innerHeight - $("#CodeRunner").height() - 25);
 
-      $(".panel").width( window.innerWidth /2 - 4);
+      $(".panel").width( window.innerWidth/2 - 8);
+
+      UpdateOutput();
 
       $("textarea").on('change keyup paste', function() {
-                                                              $('iframe').contents().find('html').html( $("#htmlPanel").val()   );
+                                                          UpdateOutput();                                                               
                                                           });
+
+
 
     </script>
 
