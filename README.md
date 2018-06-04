@@ -10,7 +10,8 @@
 
 ### Title Bar:
 
-![Title Bar](art/bar.png) 
+![Title Bar](art/bar.png) <br><br>
+You can toggle between HTML, CSS, Javascript and Output and the page width will be divided accordingly.
 
 
 ### Functionality:
