@@ -16,10 +16,10 @@
 ### Functionality:
 <p>Shows real-time output to your input written in HTML, CSS, JS</p>
 
-###How To Use:
+### How To Use:
 <p>Just clone the repo and open up the jquery.html in any browser (Preferably Firefox)</p>
 
 
-###Demo Walkhthrough:
+### Demo Walkhthrough:
 
 ![Demo](art/demo.gif) 
