@@ -22,4 +22,4 @@
 
 ### Demo Walkhthrough:
 
-![Demo](art/demo1.gif) 
+![Demo](art/file.gif) 
